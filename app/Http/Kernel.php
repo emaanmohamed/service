@@ -42,7 +42,7 @@ class Kernel extends HttpKernel
             'bindings',
             \App\Http\Middleware\Logging::class,
             'httpHeaders:Come work for US!',
-            \App\Http\Middleware\BasicAuth::class,
+             'auth:api',
         ],
     ];
 
