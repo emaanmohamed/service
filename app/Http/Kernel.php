@@ -40,6 +40,9 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
             'bindings',
+            \App\Http\Middleware\Logging::class,
+            'httpHeaders:Come work for US!',
+            \App\Http\Middleware\BasicAuth::class,
         ],
     ];
 
@@ -57,5 +60,6 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'httpHeaders' => \App\Http\Middleware\HttpHeaders::class,
     ];
 }
